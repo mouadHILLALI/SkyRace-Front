@@ -1,0 +1,16 @@
+<nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="logo">
+        <img src="/assets/pigeon-logo.svg" alt="Pigeon Racing Logo" />
+        <span>Pigeon Racing</span>
+      </a>
+      <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links" [class.active]="isMenuOpen">
+        <li *ngFor="let link of links"><a href={{link.link}} (click)="toggleMenu()">{{link.title}}</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  
