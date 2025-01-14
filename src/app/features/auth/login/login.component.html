@@ -35,8 +35,8 @@
       <button type="submit" [disabled]="loginForm.invalid">Sign In</button>
   
       <div class="additional-links">
-        <a href="#">Forgot password?</a>
-        <a href="#">Sign up</a>
+        <a (click)="navigate('/Auth/register')">Forgot password?</a>
+        <a (click)="navigate('/Auth/register')">Sign up</a>
       </div>
     </form>
   </div>
