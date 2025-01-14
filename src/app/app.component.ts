@@ -1,13 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { SharedModule } from './shared/shared.module';
+import { globalRouteAnimations } from './core/animations';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet , SharedModule],
+  imports: [RouterOutlet , ReactiveFormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  animations:[globalRouteAnimations]
 })
 export class AppComponent {
   title = 'PigeonSky-Front';
+
+  prepareRoute(outlet: RouterOutlet) {
+    console.log('Route transition triggered:', outlet.activatedRouteData);
+    return true; 
+  }  
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { link } from 'fs';
-import { title } from 'process';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -11,7 +11,6 @@ import { title } from 'process';
 })
 export class NavbarComponent {
   isMenuOpen = false;
-
 public links = [
 {
   title : "Home" ,
@@ -19,14 +18,21 @@ public links = [
 },
 {
   title : "Login" ,
-  link:"login"
+  link:"/Auth/login"
 },
 {
   title : "Register" ,
-  link:"register"
+  link:"/Auth/register"
 }
 ];
+
+constructor(private router : Router){
+
+}
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+  navigate(link : string):void{
+    this.router.navigate([link]);
   }
 }

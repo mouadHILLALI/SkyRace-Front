@@ -16,36 +16,6 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<app-navbar></app-navbar>
-<div class="home-container">
-    <header class="hero">
-      <h1>Welcome to Pigeon Racing World</h1>
-      <p>Experience the thrill of the sky's most exciting sport</p>
-    </header>
-    <section class="features">
-      <div class="feature-card">
-        <h2>About Pigeon Racing</h2>
-        <p>Discover the fascinating world of pigeon racing, where speed, endurance, and strategy converge in an exhilarating aerial competition.</p>
-      </div>
-      <div class="feature-card">
-        <h2>Getting Started</h2>
-        <ul>
-          <li>Learn about racing pigeon breeds</li>
-          <li>Set up your pigeon loft</li>
-          <li>Join a local racing club</li>
-          <li>Train your birds</li>
-          <li>Participate in your first race</li>
-        </ul>
-      </div>
-      <div class="feature-card">
-        <h2>Upcoming Events</h2>
-        <ul>
-          <li>Spring Classic - May 15</li>
-          <li>Summer Sprint Series - June-August</li>
-          <li>Annual Long Distance Challenge - September 10</li>
-        </ul>
-      </div>
-    </section>
-  </div>
-<router-outlet></router-outlet>
+<div [@globalRouteAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>    
+</div>
